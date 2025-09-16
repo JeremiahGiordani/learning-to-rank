@@ -1,0 +1,22 @@
+# config.yaml
+
+data:
+  data: "data/training.json"   # path to your JSON dataset
+  batch_size: 256
+  val_split: 0.1               # 10% of data used for validation
+
+model:
+  node_hidden: 64
+  edge_hidden: 64
+  score_hidden: 64
+  use_edges: true
+  gnn_layers: 0                # 0 = DeepSets+edges; >0 enables message passing
+  dropout: 0.0
+  device: auto                 # "auto", "cpu", or "cuda[:N]"
+
+train:
+  epochs: 50
+  lr: 0.0003
+  weight_decay: 0.0001
+  seed: 1337
+  out_dir: "outputs/exp1"      # where checkpoints/logs/metrics will be saved
